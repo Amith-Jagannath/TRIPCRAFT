@@ -4,11 +4,13 @@ TripCraft Streamlit UI.
 Run with: streamlit run frontend/app.py
 Requires the FastAPI backend running at localhost:8000 (see backend/main.py).
 """
+import os
+
 import streamlit as st
 import requests
 from datetime import date, timedelta
 
-API_URL = "http://localhost:8000"
+API_URL= os.getenv("API_URL", "http://localhost:8000")
 
 st.set_page_config(page_title="TripCraft", page_icon="🧳", layout="wide")
 st.title("🧳 TripCraft — Autonomous Travel Planning Agent")
